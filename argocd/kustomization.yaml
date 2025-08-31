@@ -3,14 +3,12 @@ kind: Kustomization
 metadata:
   name: prometheus-operator-config
 
-commonAnnotations:
-  "helm.sh/resource-policy": keep
-
-commonLabels:
-  app: prometheus-operator
-  managedBy: argocd
-  managementCodeGroup: chrismlee42-dev
-  managementCodeProject: prometheus-operator-config
+labels:
+  - pairs:
+      app: prometheus-operator
+      managedBy: argocd
+      managementCodeGroup: chrismlee42-dev
+      managementCodeProject: prometheus-operator-config
 
 namespace: prometheus-operator
 
